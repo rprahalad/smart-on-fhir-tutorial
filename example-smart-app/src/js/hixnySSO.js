@@ -36,9 +36,20 @@
           if (typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family.join(' ');
-	    $('#PatientName').val(p.fname + " " +  p.lname);
+	    $('#PatientName').val(fname + " " +  lname);
           }
-          $('#FACCODE').val("" + JSON.stringify(patient));
+	  patient.identifier.forEach( function(iden) {
+	  	var tId = iden;
+		var tMRN = "";
+		if (tId.type.coding.code = "MR"){
+			tMRN = tId.value;
+			alert("MRN = " + tMRN);
+			//document.getElementById('MRN').value = tMRN;
+		}
+			          
+			            
+	  });
+          //$('#FACCODE').val("" + JSON.stringify(patient));
           //alert("Patient Bundle = " + JSON.stringify(patient));
 					/*
           var height = byCodes('8302-2');
