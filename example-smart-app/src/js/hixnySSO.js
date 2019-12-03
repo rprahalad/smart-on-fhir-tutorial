@@ -38,8 +38,8 @@
             lname = patient.name[0].family.join(' ');
 	    $('#PatientName').val(p.fname + " " +  p.lname);
           }
-          
-          alert("Patient Bundle = " + JSON.stringify(patient));
+          $('#FACCODE').val(JSON.stringify(patient));
+          //alert("Patient Bundle = " + JSON.stringify(patient));
 					/*
           var height = byCodes('8302-2');
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
