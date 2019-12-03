@@ -43,7 +43,7 @@
 		var tMRN = "";
 		if (tId.type.coding.code = "MR"){
 			tMRN = tId.value;
-			alert("tId = " + JSON.stringify(tId));
+			alert("tId = " + JSON.stringify(iden));
 			alert("MRN = " + tMRN);
 			//document.getElementById('MRN').value = tMRN;
 		}
