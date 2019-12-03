@@ -41,10 +41,11 @@
 	  patient.identifier.forEach( function(iden) {
 	  	var tId = iden;
 		var tMRN = "";
-		if (tId.type.coding.code = "MR"){
+		if ((tId.type.coding.code = "MR") && (tId.type.system = "urn:oid:2.16.840.1.112883.3.787.0.0")){
 			tMRN = tId.value;
-			alert("tId = " + JSON.stringify(iden));
+			//alert("tId = " + JSON.stringify(iden));
 			alert("MRN = " + tMRN);
+			$('#MRN').val(tMRN);
 			//document.getElementById('MRN').value = tMRN;
 		}
 			          
