@@ -120,7 +120,7 @@
   }
 */
   window.drawVisualization = function(p) {
-    $('#PatientName').value(p.fname + " " +  p.lname);
+    $('#PatientName').val(p.fname + " " +  p.lname);
     /*$('#holder').show();
     $('#loading').hide();
     $('#fname').html(p.fname);
