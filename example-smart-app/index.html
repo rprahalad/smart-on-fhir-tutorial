@@ -110,16 +110,16 @@
             }
       }
     
-		  function displayPatient (pt) {
+      function displayPatient (pt) {
             document.getElementById('PatientName').value = getPatientName(pt);
-            //alert("PatName = " + document.getElementById('PatientName').value;
+            alert("PatName = " + document.getElementById('PatientName').value;
        }
       
       FHIR.oauth2.ready(function(smart) {
-    	//alert("OAuth Ready!");
+    	alert("OAuth Ready!");
         smart.patient.read().then(function(pt) {
           displayPatient (pt);
-            //alert("Patient Bundle = " + JSON.stringify(pt));
+            alert("Patient Bundle = " + JSON.stringify(pt));
               pt.identifier.forEach( function(iden) {
                 var tId = iden;
                 var tMRN = "";
