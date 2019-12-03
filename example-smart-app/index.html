@@ -97,5 +97,73 @@
         }
       );
     </script>
+    
+    <script type="text/javascript">
+      function getPatientName(pt) {
+            if (pt.name) {
+                var names = pt.name.map(function(name) {
+                    return name.given.join(" ") + " " + name.family.join(" ");
+                });
+                return names.join(" / ");
+            } else {
+                return "anonymous";
+            }
+      }
+    
+		  function displayPatient (pt) {
+            document.getElementById('PatientName').value = getPatientName(pt);
+            //alert("PatName = " + document.getElementById('PatientName').value;
+       }
+      
+      FHIR.oauth2.ready(function(smart) {
+    	//alert("OAuth Ready!");
+        smart.patient.read().then(function(pt) {
+          displayPatient (pt);
+            //alert("Patient Bundle = " + JSON.stringify(pt));
+              pt.identifier.forEach( function(iden) {
+                var tId = iden;
+                var tMRN = "";
+                if (tId.type.coding.code = "MR"){
+                  tMRN = tId.value;
+                  //alert("MRN = " + tMRN);
+                  document.getElementById('MRN').value = tMRN;
+                }
+
+
+              });
+
+              //alert("After displayPatient !");
+              //alert("UserName = " + JSON.stringify(smart.userId));
+              if(typeof smart.userId !== "undefined"){
+                document.getElementById('HixnyUserName').value = smart.userId;
+              }
+
+
+        });
+           
+      });
+      
+      function setXMLSubmit(){
+        var user = document.getElementById('HixnyUserName').value;
+        var MRN = document.getElementById('MRN').value;
+        var FACCODE = document.getElementById('FACCODE').value;
+        //alert("FACCODE = " + FACCODE);
+        document.forms["myform"].submit();
+		  }
+      
+    </script>
+    
+    <img src="logo-HIXNY.jpg" alt="Hixny" >
+    <form id="myform"  action="http://172.21.0.240:8090/csp/healthshare/sso/ehrclient/HIXNY.SSO.PatientSearchRequest.cls" method="post">
+      <br><br>
+      <table align="center" border=0>
+        <tr><td>UserName:</td><td><input type="text" id="HixnyUserName" name="HixnyUserName" value="hixnyqa8" readonly></td></tr>	
+        <tr><td>PatientName:</td><td><input type="text" id="PatientName" name="PatientName" value="" readonly></td></tr>	
+        <tr><td>MRN:</td><td><input type="text" id="MRN" name="MRN" value="" readonly></td></tr>	
+        <tr><table align=center><tr><td><input type="button" id="Submit" value="View Patient's Record in Hixny" onclick="setXMLSubmit()"/></td></tr></table></tr>
+        <tr><td><input type="hidden" id="FACCODE" name="FACCODE" value=""></td></tr>
+      </table>
+    </form>
+    
   </body>
 </html>
