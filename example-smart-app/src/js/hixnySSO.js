@@ -36,7 +36,7 @@
           if (typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family.join(' ');
-	    document.getElementById('PatientName').value = fname + " " + lname;
+	    $('#PatientName').val(p.fname + " " +  p.lname);
           }
           
           alert("Patient Bundle = " + JSON.stringify(patient));
@@ -120,7 +120,7 @@
   }
 */
   window.drawVisualization = function(p) {
-    $('#PatientName').val(p.fname + " " +  p.lname);
+    //$('#PatientName').val(p.fname + " " +  p.lname);
     /*$('#holder').show();
     $('#loading').hide();
     $('#fname').html(p.fname);
