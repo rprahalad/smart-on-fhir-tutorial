@@ -41,13 +41,11 @@
 	  patient.identifier.forEach( function(iden) {
 	  	var tId = iden;
 		var tMRN = "";
-		if ((tId.type.coding.code = "MR")){
-			if (tId.type.system = "urn:oid:2.16.840.1.112883.3.787.0.0"){
-				tMRN = tId.value;
-				//alert("tId = " + JSON.stringify(iden));
-				alert("MRN = " + tMRN + " AA = " + tId.type.system);
-				$('#MRN').val(tMRN);
-			}
+		if ((tId.type.coding.code = "MR") && (tId.system = "urn:oid:2.16.840.1.112883.3.787.0.0")){
+			tMRN = tId.value;
+			alert("MRN = " + tMRN + " AA = " + tId.type.system);
+			$('#MRN').val(tMRN);
+			
 		}
 			          
 			            
