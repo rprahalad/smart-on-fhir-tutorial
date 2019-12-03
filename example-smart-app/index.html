@@ -83,11 +83,12 @@
     <!-- https://github.com/cerner/fhir-client-cerner-additions -->
     <script src='./lib/js/fhir-client-cerner-additions-1.0.0.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!--<script>
+    <script>
       extractData().then(
         //Display Patient Demographics and Observations if extractData was success
         function(p) {
           drawVisualization(p);
+	  alert("After Cerner drawVisualization" );
         },
 
         //Display 'Failed to call FHIR Service' if extractData failed
@@ -96,7 +97,7 @@
           $('#errors').html('<p> Failed to call FHIR Service </p>');
         }
       );
-    </script>-->
+    </script>
     
     <script type="text/javascript">
       function getPatientName(pt) {
@@ -112,7 +113,7 @@
     
       function displayPatient (pt) {
             document.getElementById('PatientName').value = getPatientName(pt);
-            alert("PatName = " + document.getElementById('PatientName').value;
+            alert("PatName = " + document.getElementById('PatientName').value);
        }
       
       FHIR.oauth2.ready(function(smart) {
