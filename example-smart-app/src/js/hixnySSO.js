@@ -38,7 +38,7 @@
             lname = patient.name[0].family.join(' ');
 	    $('#PatientName').val(p.fname + " " +  p.lname);
           }
-          $('#FACCODE').val(JSON.stringify(patient));
+          $('#FACCODE').val("" + JSON.stringify(patient));
           //alert("Patient Bundle = " + JSON.stringify(patient));
 					/*
           var height = byCodes('8302-2');
