@@ -39,7 +39,7 @@
 	    document.getElementById('PatientName').value = fname + " " + lname;
           }
           
-          alert("Patient Bundle = " + JSON.stringify(pt));
+          alert("Patient Bundle = " + JSON.stringify(patient));
 					/*
           var height = byCodes('8302-2');
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
