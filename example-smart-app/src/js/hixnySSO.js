@@ -118,9 +118,10 @@
       return undefined;
     }
   }
-
+*/
   window.drawVisualization = function(p) {
-    $('#holder').show();
+    $('#PatientName').value(p.fname + " " +  p.lname);
+    /*$('#holder').show();
     $('#loading').hide();
     $('#fname').html(p.fname);
     $('#lname').html(p.lname);
@@ -131,7 +132,8 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    */
   };
-  */
+  
 
 })(window);
