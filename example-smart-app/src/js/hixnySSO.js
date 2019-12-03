@@ -44,7 +44,7 @@
 		if ((tId.type.coding.code = "MR") && (tId.type.system = "urn:oid:2.16.840.1.112883.3.787.0.0")){
 			tMRN = tId.value;
 			//alert("tId = " + JSON.stringify(iden));
-			alert("MRN = " + tMRN);
+			alert("MRN = " + tMRN + " AA = " + tId.type.system);
 			$('#MRN').val(tMRN);
 			//document.getElementById('MRN').value = tMRN;
 		}
