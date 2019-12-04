@@ -44,7 +44,7 @@
 		//if (tId.system == "urn:oid:2.16.840.1.112883.3.787.0.0"){
 			//if (tId.type.coding.code == 'MR'){}
 			tMRN = tId.value;
-			alert("MRN = " + tMRN + " AA = '" + tId.system + "'");
+			alert("MRN = " + tMRN + " AA = '" + tId.system + "'" + " boolean = " + tId.system == "urn:oid:2.16.840.1.112883.3.787.0.0");
 			$('#MRN').val(tMRN);
 		//}
 			          
