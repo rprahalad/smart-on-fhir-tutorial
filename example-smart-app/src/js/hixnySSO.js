@@ -105,13 +105,16 @@
       }
      
       if(typeof smart.userId !== "undefined"){
-	alert("User Id = " + smart.userId ); 
-      	var tUserId = smart.userId;
+	var justUserId = smart.userId.substring(smart.userId.indexOf('Practitioner/')+14);
+	alert("User Id = " + justUserId ); 
+      	$('#HixnyUserName').val(smart.userId.substring(smart.userId.indexOf('Practitioner/')+14));
+	/*var tUserId = smart.userId;
 	var userB = tUserId.read();
 	$.when(userB).fail(onError);
 	$.when(userB).done(function(user) {
 	      alert("User Bundle = " + JSON.stringify(user)); 
 	});
+	*/
       }
     }
     
