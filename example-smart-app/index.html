@@ -89,7 +89,7 @@
         //Display Patient Demographics and Observations if extractData was success
         function(p) {
           //drawVisualization(p);
-	  alert("After Cerner drawVisualization" );
+	  //alert("After Cerner drawVisualization" );
         },
 
         //Display 'Failed to call FHIR Service' if extractData failed
@@ -99,7 +99,7 @@
         }
       );
     </script>
-    
+    <!--
     <script type="text/javascript">
       function getPatientName(pt) {
             if (pt.name) {
@@ -153,7 +153,7 @@
         document.forms["myform"].submit();
 		  }
       
-    </script>
+    </script>-->
     
     <img src="logo-HIXNY.jpg" alt="Hixny" >
     <form id="myform"  action="http://172.21.0.240:8090/csp/healthshare/sso/ehrclient/HIXNY.SSO.PatientSearchRequest.cls" method="post">
