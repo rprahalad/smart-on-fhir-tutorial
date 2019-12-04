@@ -28,7 +28,8 @@
           
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
-        var pt = patient.read();
+        alert("patient initial = " + patient ); 
+	var pt = patient.read();
         /*var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
                     query: {
@@ -70,7 +71,7 @@
 			            
 	  });
           //$('#FACCODE').val("" + JSON.stringify(patient));
-          alert("Patient Bundle = " + JSON.stringify(patient));
+          //alert("Patient Bundle = " + JSON.stringify(patient));
 					/*
           var height = byCodes('8302-2');
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
