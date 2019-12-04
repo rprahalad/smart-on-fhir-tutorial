@@ -44,7 +44,7 @@
 		//&& (tId.type.coding.code == 'MR')
 		//&& (typeof tId.type.coding.code !== 'undefined') && (tId.type.coding.code == 'MR')
 		if ((tId.system == "urn:oid:2.16.840.1.113883.3.787.0.0") ){
-			alert("tId.type.coding.code = " + tId.type.coding.code + " tId.value = " + tId.value + " tId.system " + tId.system);
+			//alert("tId.type.coding.code = " + tId.type.coding.code + " tId.value = " + tId.value + " tId.system " + tId.system);
 			tMRN = tId.value;
 			$('#MRN').val(tMRN);
 		}
@@ -83,6 +83,17 @@
       } else {
         onError();
       }
+    }
+    if (smart.hasOwnProperty('patient')) {
+        var secPatient = smart.patient;
+        var secPt = secPatient.read();
+	
+	$.when(secPt).fail(onError);
+	    
+	$.when(secPt).done(function(secPatient) {
+		alert("Patient Bundle second read = " + JSON.stringify(secPatient));
+	 });
+	
     }
 
     FHIR.oauth2.ready(onReady, onError);
