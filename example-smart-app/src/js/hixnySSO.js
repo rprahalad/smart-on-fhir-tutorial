@@ -9,6 +9,17 @@
 
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
+        var secPatient = smart.patient;
+        var secPt = secPatient.read();
+	
+	$.when(secPt).fail(onError);
+	    
+	$.when(secPt).done(function(secPatient) {
+		alert("Patient Bundle second read = " + JSON.stringify(secPatient));
+	 });
+	
+      }
+      if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
         /*var obv = smart.patient.api.fetchAll({
@@ -84,17 +95,7 @@
         onError();
       }
     }
-    if (smart.hasOwnProperty('patient')) {
-        var secPatient = smart.patient;
-        var secPt = secPatient.read();
-	
-	$.when(secPt).fail(onError);
-	    
-	$.when(secPt).done(function(secPatient) {
-		alert("Patient Bundle second read = " + JSON.stringify(secPatient));
-	 });
-	
-    }
+    
 
     FHIR.oauth2.ready(onReady, onError);
     return ret.promise();
