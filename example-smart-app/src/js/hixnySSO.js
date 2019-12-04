@@ -21,6 +21,9 @@
 	
       }
       */
+      if(typeof smart.userId !== "undefined"){
+            	alert("smart.userId= " + smart.userId); 
+      }    
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
