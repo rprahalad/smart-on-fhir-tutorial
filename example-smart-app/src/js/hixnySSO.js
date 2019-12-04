@@ -8,19 +8,22 @@
     }
 
     function onReady(smart)  {
-      /*
+      
 	if (smart.hasOwnProperty('practitioner')) {
-        var prac = smart.practitioner;
-        var pr = prac.read();
+		alert("practitioner property exists!" ); 
+        	/*
+		var prac = smart.practitioner;
+        	var pr = prac.read();
 	
-	$.when(pr).fail(onError);
+		$.when(pr).fail(onError);
 	    
-	$.when(pr).done(function(practitioner) {
-		alert("Practitioner Bundle second read = " + JSON.stringify(practitioner));
-	 });
+		$.when(pr).done(function(practitioner) {
+			alert("Practitioner Bundle second read = " + JSON.stringify(practitioner));
+	 	});
+		*/
 	
       }
-      */
+      
       if(typeof smart.userId !== "undefined"){
             	alert("smart.userId= " + smart.userId); 
       }    
