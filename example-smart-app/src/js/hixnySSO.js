@@ -8,10 +8,10 @@
     }
 
     function onReady(smart)  {
-      
+      /*
 	if (smart.hasOwnProperty('practitioner')) {
 		alert("practitioner property exists!" ); 
-        	/*
+        	
 		var prac = smart.practitioner;
         	var pr = prac.read();
 	
@@ -20,18 +20,12 @@
 		$.when(pr).done(function(practitioner) {
 			alert("Practitioner Bundle second read = " + JSON.stringify(practitioner));
 	 	});
-		*/
+		
 	
       }
+      */
       
-      if(typeof smart.userId !== "undefined"){
-      	var userId = smart.userId;
-	var userB = userId.read();
-	$.when(userB).fail(onError);
-	$.when(userB).done(function(user) {
-	      alert("User Bundle = " + JSON.stringify(user)); 
-	});
-      }    
+          
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
@@ -104,8 +98,18 @@
 					*/
           ret.resolve(p);
         });
+	      
       } else {
         onError();
+      }
+     
+      if(typeof smart.userId !== "undefined"){
+      	var userId = smart.userId;
+	var userB = userId.read();
+	$.when(userB).fail(onError);
+	$.when(userB).done(function(user) {
+	      alert("User Bundle = " + JSON.stringify(user)); 
+	});
       }
     }
     
