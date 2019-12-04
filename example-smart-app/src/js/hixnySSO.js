@@ -104,8 +104,9 @@
       }
      
       if(typeof smart.userId !== "undefined"){
-      	var userId = smart.userId;
-	var userB = userId.read();
+	alert("User Id = " + smart.userId ); 
+      	var tUserId = smart.userId;
+	var userB = tUserId.read();
 	$.when(userB).fail(onError);
 	$.when(userB).done(function(user) {
 	      alert("User Bundle = " + JSON.stringify(user)); 
