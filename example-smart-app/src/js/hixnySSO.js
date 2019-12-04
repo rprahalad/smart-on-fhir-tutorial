@@ -6,9 +6,10 @@
       console.log('Loading error', arguments);
       ret.reject();
     }
-/*
+
     function onReady(smart)  {
-      if (smart.hasOwnProperty('practitioner')) {
+      /*
+	if (smart.hasOwnProperty('practitioner')) {
         var prac = smart.practitioner;
         var pr = prac.read();
 	
