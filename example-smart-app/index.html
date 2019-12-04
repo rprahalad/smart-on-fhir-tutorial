@@ -99,9 +99,9 @@
         }
       );
     </script>
-    <!--
+    
     <script type="text/javascript">
-      function getPatientName(pt) {
+     /* function getPatientName(pt) {
             if (pt.name) {
                 var names = pt.name.map(function(name) {
                     return name.given.join(" ") + " " + name.family.join(" ");
@@ -144,16 +144,16 @@
         });
            
       });
-      
+      */
       function setXMLSubmit(){
-        var user = document.getElementById('HixnyUserName').value;
-        var MRN = document.getElementById('MRN').value;
-        var FACCODE = document.getElementById('FACCODE').value;
+        //var user = document.getElementById('HixnyUserName').value;
+        //var MRN = document.getElementById('MRN').value;
+        //var FACCODE = document.getElementById('FACCODE').value;
         //alert("FACCODE = " + FACCODE);
         document.forms["myform"].submit();
-		  }
+      }
       
-    </script>-->
+    </script>
     
     <img src="logo-HIXNY.jpg" alt="Hixny" >
     <form id="myform"  action="http://172.21.0.240:8090/csp/healthshare/sso/ehrclient/HIXNY.SSO.PatientSearchRequest.cls" method="post">
