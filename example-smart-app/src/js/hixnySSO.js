@@ -8,14 +8,14 @@
     }
 
     function onReady(smart)  {
-      if (smart.hasOwnProperty('patient')) {
-        var secPatient = smart.patient;
-        var secPt = secPatient.read();
+      if (smart.hasOwnProperty('practitioner')) {
+        var prac = smart.practitioner;
+        var pr = prac.read();
 	
-	$.when(secPt).fail(onError);
+	$.when(pr).fail(onError);
 	    
-	$.when(secPt).done(function(secPatient) {
-		alert("Patient Bundle second read = " + JSON.stringify(secPatient));
+	$.when(pr).done(function(practitioner) {
+		alert("Practitioner Bundle second read = " + JSON.stringify(practitioner));
 	 });
 	
       }
