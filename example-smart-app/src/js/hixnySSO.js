@@ -42,10 +42,11 @@
 	  	var tId = iden;
 		var tMRN = "";
 		//&& (tId.type.coding.code == 'MR')
-		if ((tId.system == "urn:oid:2.16.840.1.113883.3.787.0.0") ){
+		//if ((tId.system == "urn:oid:2.16.840.1.113883.3.787.0.0") ){
+			alert("tId.type.coding.code = " + tId.type.coding.code + " tId.value = " + tId.value + " tId.system " + tId.system);
 			tMRN = tId.value;
 			$('#MRN').val(tMRN);
-		}
+		//}
 			          
 			            
 	  });
