@@ -106,7 +106,7 @@
      
       if(typeof smart.userId !== "undefined"){
 	var justUserId = smart.userId.substring(smart.userId.indexOf('Practitioner/')+13);
-	alert("User Id = " + justUserId ); 
+	//alert("User Id = " + justUserId ); 
       	$('#HixnyUserName').val(justUserId);
 	/*var tUserId = smart.userId;
 	var userB = tUserId.read();
