@@ -25,7 +25,12 @@
       }
       
       if(typeof smart.userId !== "undefined"){
-            	alert("smart.userId= " + smart.userId); 
+      	var userId = smart.userId;
+	var userB = userId.read();
+	$.when(userB).fail(onError);
+	$.when(userB).done(function(user) {
+	      alert("User Bundle = " + JSON.stringify(user)); 
+	});
       }    
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
